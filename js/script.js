@@ -79,3 +79,24 @@ for (let i = 0; i < teamMembers.length; i++) {
         console.log(key + ' : ' + currentMember[key]);
     }
 }
+
+// # MILESTONE 2
+
+// * Stampiamo il nome, il ruolo e la stringa di ogni oggetto presente nell'array all'interno del DOM
+
+const memberList = document.getElementById('member-list');
+
+for (let i = 0; i < teamMembers.length; i++) {
+    const currentMember = teamMembers[i];
+
+    const element = document.createElement('li');
+    let contentElement = '';
+
+    for (let key in currentMember) {
+        contentElement += key + ' : ' + currentMember[key] + ' ';
+    }
+
+    element.innerText = contentElement;
+
+    memberList.appendChild(element)
+}
