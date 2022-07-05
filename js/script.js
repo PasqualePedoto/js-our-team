@@ -29,7 +29,7 @@
 // $ SVOLGIMENTO
 // $ --------------------------------------------------
 
-// # MILESTONE 1
+// # MILESTONE 0
 
 // * Creiamo un array contenente tutti i dati all'interno
 
@@ -66,4 +66,16 @@ const teamMembers = [
     },
 ];
 
+// # MILESTONE 1 
 
+// * Stampiamo il nome, il ruolo e la stringa di ogni oggetto presente nell'array
+
+for (let i = 0; i < teamMembers.length; i++) {
+    const currentMember = teamMembers[i];
+
+    console.log('------- Team Member -------');
+
+    for (let key in currentMember) {
+        console.log(key + ' : ' + currentMember[key]);
+    }
+}
