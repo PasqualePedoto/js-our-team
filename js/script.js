@@ -86,6 +86,27 @@ for (let i = 0; i < teamMembers.length; i++) {
 
 const memberList = document.getElementById('member-list');
 
+// for (let i = 0; i < teamMembers.length; i++) {
+//     const currentMember = teamMembers[i];
+
+//     const element = document.createElement('li');
+//     element.innerText = `Member no. ${i + 1}`;
+//     const insideList = document.createElement('ul');
+//     element.appendChild(insideList);
+
+//     for (let key in currentMember) {
+//         const insideElement = document.createElement('li');
+//         insideElement.innerText = key + ' : ' + currentMember[key] + ' ';
+//         insideList.appendChild(insideElement);
+//     }
+
+//     memberList.appendChild(element)
+// }
+
+// # BONUS 1
+
+// Trasformare la stringa foto in una immagine effettiva 
+
 for (let i = 0; i < teamMembers.length; i++) {
     const currentMember = teamMembers[i];
 
@@ -96,7 +117,12 @@ for (let i = 0; i < teamMembers.length; i++) {
 
     for (let key in currentMember) {
         const insideElement = document.createElement('li');
-        insideElement.innerText = key + ' : ' + currentMember[key] + ' ';
+        if (key === 'stringPhoto') {
+            const memberImg = `<img src="img/${currentMember[key]}" alt="img-${i + 1}">`;
+            insideElement.innerHTML = memberImg;
+        } else {
+            insideElement.innerText = key + ' : ' + currentMember[key];
+        }
         insideList.appendChild(insideElement);
     }
 
