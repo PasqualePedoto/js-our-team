@@ -90,13 +90,15 @@ for (let i = 0; i < teamMembers.length; i++) {
     const currentMember = teamMembers[i];
 
     const element = document.createElement('li');
-    let contentElement = '';
+    element.innerText = `Member no. ${i + 1}`;
+    const insideList = document.createElement('ul');
+    element.appendChild(insideList);
 
     for (let key in currentMember) {
-        contentElement += key + ' : ' + currentMember[key] + ' ';
+        const insideElement = document.createElement('li');
+        insideElement.innerText = key + ' : ' + currentMember[key] + ' ';
+        insideList.appendChild(insideElement);
     }
-
-    element.innerText = contentElement;
 
     memberList.appendChild(element)
 }
