@@ -1,4 +1,70 @@
-img {
-    width: 100px;
-    height: 100px;
+/* Settiamo il colore del body */
+
+body {
+    background-color: #F5F5F1;
+}
+
+/* Le immagini devono occupare tutto lo spazio del contenitore */
+
+img,
+.photo {
+    width: 100%;
+}
+
+/*
+Servendoci delle classi 'photo' e 'description' risistemiamo le immagini e le descrizioni
+utilizzando la proprietà order di flex
+*/
+
+.photo {
+    order: 0;
+}
+
+.description {
+    order: 1;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+/* Cambiamo il font-size in modo da mostrare più grande il nome */
+
+.full-name {
+    font-size: 25px;
+}
+
+/* Settiamo i margini alle card */
+
+.card {
+    margin: 25px;
+}
+
+main>ul {
+    list-style-type: none;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Settiamo le impostazioni di flex */
+
+li>ul {
+    padding: 0;
+}
+
+/* Disponiamo a 3 a 3 le card */
+
+li {
+    width: calc(100% /3 - 50px);
+}
+
+/* In tal modo organizziamo la card internamente */
+
+.inside-ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
 }

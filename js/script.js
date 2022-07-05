@@ -107,21 +107,51 @@ const memberList = document.getElementById('member-list');
 
 // Trasformare la stringa foto in una immagine effettiva 
 
+// for (let i = 0; i < teamMembers.length; i++) {
+//     const currentMember = teamMembers[i];
+
+//     const element = document.createElement('li');
+//     const insideList = document.createElement('ul');
+//     element.appendChild(insideList);
+
+//     for (let key in currentMember) {
+//         const insideElement = document.createElement('li');
+//         if (key === 'stringPhoto') {
+//             insideElement.classList.add('photo');
+//             const memberImg = `<img src="img/${currentMember[key]}" alt="img-${i + 1}">`;
+//             insideElement.innerHTML = memberImg;
+//         } else {
+//             insideElement.innerText = key + ' : ' + currentMember[key];
+//         }
+//         insideList.appendChild(insideElement);
+//     }
+
+//     memberList.appendChild(element)
+// }
+
+// # BONUS 2
+
+// Organizzare i singoli membri in card/schede
+
 for (let i = 0; i < teamMembers.length; i++) {
     const currentMember = teamMembers[i];
 
     const element = document.createElement('li');
-    element.innerText = `Member no. ${i + 1}`;
+    element.classList.add('card');
     const insideList = document.createElement('ul');
+    insideList.classList.add('inside-ul');
     element.appendChild(insideList);
 
     for (let key in currentMember) {
         const insideElement = document.createElement('li');
         if (key === 'stringPhoto') {
+            insideElement.classList.add('photo');
             const memberImg = `<img src="img/${currentMember[key]}" alt="img-${i + 1}">`;
             insideElement.innerHTML = memberImg;
         } else {
-            insideElement.innerText = key + ' : ' + currentMember[key];
+            if (key === 'fullName') insideElement.classList.add('full-name');
+            insideElement.classList.add('description');
+            insideElement.innerText = currentMember[key];
         }
         insideList.appendChild(insideElement);
     }
